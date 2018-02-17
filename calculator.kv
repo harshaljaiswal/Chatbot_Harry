@@ -1,0 +1,27 @@
+<CustButton@Button>:
+    font_size:32
+
+<CalcGridLayout>:
+    id: calculator
+    display: entry
+    rows: 2
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        TextInput:
+            id: entry
+            font_size:32
+            multiline: True
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "Ask"
+            on_press: entry.text = calculator.API_call(entry.text)
+
+        CustButton:
+            text: "Clear Response"
+            on_press: entry.text = ''
+
+
